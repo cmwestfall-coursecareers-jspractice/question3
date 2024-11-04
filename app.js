@@ -1,27 +1,27 @@
 function passwordStrengthChecker(password) {
-  let passwordStrength = 0;
+  pointTotal = 0;
 
   if (password.length > 10) {
-    passwordStrength++;
+    pointTotal++;
   }
 
   if (password.toLowerCase() !== password) {
-    passwordStrength++;
+    pointTotal++;
   }
 
   if (password.toUpperCase() !== password) {
-    passwordStrength++;
+    pointTotal++;
   }
 
   if (password.split("").some((char) => !isNaN(char))) {
-    passwordStrength++;
+    pointTotal++;
   }
 
   if (password.split("").some((char) => "!@#$%^&*()".includes(char))) {
-    passwordStrength++;
+    pointTotal++;
   }
 
-  switch (passwordStrength) {
+  switch (pointTotal) {
     default:
       console.log("weak");
       break;
@@ -37,4 +37,4 @@ function passwordStrengthChecker(password) {
   }
 }
 
-passwordStrengthChecker("");
+passwordStrengthChecker("helloworld123!");
